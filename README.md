@@ -1,2 +1,2 @@
-# Website about hobby  "Creating solutions to make life easier"
+# Website about hobby
 ## Project created for educational purposes. 
