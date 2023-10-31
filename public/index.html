@@ -3,18 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Hobby</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
     <link rel="stylesheet" type="text/css" href="styles/style.css"/>
     <script src="../dist/index.js" defer></script>
 </head>
 <body>
     <nav>
          <svg></svg>
-         <ul>
+         <ul class="menu">
              <li><a href="#">Home</a></li>
              <li><a href="#">About</a></li>
-             <li><a href="#">Projects</a></li>
+             <li>
+                 <a href="#">Projects</a>
+                 <ul class="dropdown">
+                     <li><a href="#">Mock Ups</a></li>
+                     <li><a href="#">Apps</a></li>
+                 </ul>
+             </li>
              <li><a href="#">Contact</a></li>
          </ul>
     </nav>
+    <header>
+        <div class="content">
+            <div class="text">
+                <h1>Lorem Ipsum</h1>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus tortor vitae eros scelerisque malesuada.</h3>
+                <div class="references">
+                    <a href="#" class="glass button">Lorem</a>
+                    <a href="#" class="glass button">Ipsum</a>
+                </div>
+            </div>
+            <svg></svg>
+        </div>
+    </header>
 </body>
 </html>
