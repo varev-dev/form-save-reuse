@@ -81,9 +81,14 @@ nav:after {
 }
 
 .dropdown > li {
+    width: 100%;
+}
+.dropdown > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
     text-align: center;
     padding: 20px 0;
-    width: 100%;
 }
 
 .dropdown > li:last-child {
@@ -101,6 +106,110 @@ nav:after {
     color: white;
 }
 
-header {
+header, section.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 6rem;
+}
+
+form {
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+form label, form p {
+    font-size: 1.1em;
+}
+
+.form-element {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.no-flex {
+    display: block;
+    align-items: normal;
+}
+
+label[for="agreeTOS"] {
+    font-size: 0.8em;
+    font-weight: lighter;
+    color: #84a0a8;
+}
+
+#contact-form input[type="text"], input[type="email"], textarea {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 0 8px;
+    height: 30px;
+}
+
+textarea {
+    height: 130px;
+    resize: none;
+    line-height: 25px;
+}
+
+.form-input {
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 5px;
+    font-size: 0.9em;
+    background: #0b232a;
+    border: 2px solid #0b697c;
+    color: #b2d0d5;
+}
+
+.form-button {
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    width: 100px;
+    padding: 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    height: 30px;
+}
+
+.form-element.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.button-green {
+    color: white;
+    background: #0b7c43;
+}
+
+.button-blue {
+    color: white;
+    background: #0b697c;
+}
+
+.button-red {
+    color: white;
+    background: #7c180b;
+}
+
+footer {
+    top: calc(100vh - 3rem);
+    position: fixed;
+    font-family: 'Ubuntu', sans-serif;
+    border-top: 3px solid #0b697c;
+    background: #02161A;
+    text-align: center;
+    line-height: 3rem;
+    width: 100%;
+    height: 3rem;
+}
+
+footer p, footer p a {
+    color: #0b697c;
 }

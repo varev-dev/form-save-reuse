@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hobby</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <script src="../dist/index.js" defer></script>
+</head>
+<body>
+    <nav>
+        <svg></svg>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li>
+                <a href="#">Projects</a>
+                <ul class="dropdown">
+                    <li><a href="#">Mock Ups</a></li>
+                    <li><a href="#">Apps</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="contact">
+        <form method="post" id="contact-form" action="odbierz.php">
+            <div class="form-element">
+                <label for="fullName">Full Name</label>
+                <input type="text" name="fullName" id="fullName" class="form-input"/>
+            </div>
+            <div class="form-element">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" class="form-input"/>
+            </div>
+            <div class="form-element no-flex">
+                <p>Contact type</p>
+                <input type="radio" name="contactType" id="contactPrivate" required/>
+                <label for="contactPrivate">Private</label>
+                <input type="radio" name="contactType" id="contactBusiness" required/>
+                <label for="contactBusiness">Business</label>
+            </div>
+            <div class="form-element">
+                <label for="category">Category</label>
+                <select name="category" id="category">
+                    <option value="" selected hidden="hidden" disabled>Choose</option>
+                    <option value="projectOrder">Project Order</option>
+                    <option value="jobOffer">Job Offer</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-element">
+                <label for="messageTitle">Message Title</label>
+                <input type="text" name="messageTitle" id="messageTitle" class="form-input"/>
+            </div>
+            <div class="form-element">
+                <label for="messageContent">Message Content</label>
+                <textarea name="messageContent" id="messageContent" class="form-input"></textarea>
+            </div>
+            <div class="form-element no-flex">
+                <input type="checkbox" name="agreeTOS" id="agreeTOS" class="form-input" required/>
+                <label for="agreeTOS">Agree to data processing etc.</label>
+            </div>
+            <div class="form-element">
+                <label>File with more information</label><br/>
+                <input type="file" name="submit-contact" accept=".doc,.docx,application/msword" class=""/>
+            </div>
+            <div class="form-element buttons">
+                <input type="submit" name="submit-contact" value="Send" class="form-input form-button button-green"/>
+                <input type="button" name="save-contact" value="Save" class="form-input form-button button-blue" hidden="hidden"/>
+                <input type="reset" name="reset-contact" value="Reset" class="form-input form-button button-red"/>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 <a href="https://github.com/varev-dev">varev-dev</a></p>
+    </footer>
+</body>
+</html>
