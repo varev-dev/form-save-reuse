@@ -33,11 +33,11 @@
                 <label for="email">Email Address</label>
                 <input type="email" name="email" id="email" class="form-input"/>
             </div>
-            <div class="form-element">
+            <div class="form-element no-flex">
                 <p>Contact type</p>
-                <input type="radio" name="contactType" id="contactPrivate"/>
+                <input type="radio" name="contactType" id="contactPrivate" required/>
                 <label for="contactPrivate">Private</label>
-                <input type="radio" name="contactType" id="contactBusiness"/>
+                <input type="radio" name="contactType" id="contactBusiness" required/>
                 <label for="contactBusiness">Business</label>
             </div>
             <div class="form-element">
@@ -57,12 +57,18 @@
                 <label for="messageContent">Message Content</label>
                 <textarea name="messageContent" id="messageContent" class="form-input"></textarea>
             </div>
-            <div class="form-element">
-                <input type="checkbox" name="agreeToTOS" id="agreeToTOS" class="form-input" required/>
-                <label for="agreeToTOS">Agree to every single think that may come to my mind.</label>
+            <div class="form-element no-flex">
+                <input type="checkbox" name="agreeTOS" id="agreeTOS" class="form-input" required/>
+                <label for="agreeTOS">Agree to data processing etc.</label>
             </div>
             <div class="form-element">
-                <input type="submit" name="submit-contact" class="form-input"/>
+                <label>File with more information</label><br/>
+                <input type="file" name="submit-contact" accept=".doc,.docx,application/msword" class=""/>
+            </div>
+            <div class="form-element buttons">
+                <input type="submit" name="submit-contact" value="Send" class="form-input form-button button-green"/>
+                <input type="button" name="save-contact" value="Save" class="form-input form-button button-blue" hidden="hidden"/>
+                <input type="reset" name="reset-contact" value="Reset" class="form-input form-button button-red"/>
             </div>
         </form>
     </section>
