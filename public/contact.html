@@ -5,6 +5,8 @@
     <title>Hobby</title>
     <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
     <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <script src="../dist/model/Message.js"></script>
+    <script src="../dist/ContactForm.js"></script>
     <script src="../dist/index.js" defer></script>
 </head>
 <body>
@@ -35,18 +37,18 @@
             </div>
             <div class="form-element no-flex">
                 <p>Contact type</p>
-                <input type="radio" name="contactType" id="contactPrivate" required/>
-                <label for="contactPrivate">Private</label>
-                <input type="radio" name="contactType" id="contactBusiness" required/>
-                <label for="contactBusiness">Business</label>
+                <input type="radio" name="contactType" id="PRIVATE" value="PRIVATE" required/>
+                <label for="PRIVATE">Private</label>
+                <input type="radio" name="contactType" id="BUSINESS" value="BUSINESS" required/>
+                <label for="BUSINESS">Business</label>
             </div>
             <div class="form-element">
                 <label for="category">Category</label>
                 <select name="category" id="category">
                     <option value="" selected hidden="hidden" disabled>Choose</option>
-                    <option value="projectOrder">Project Order</option>
-                    <option value="jobOffer">Job Offer</option>
-                    <option value="other">Other</option>
+                    <option value="PROJECT_ORDER">Project Order</option>
+                    <option value="JOB_OFFER">Job Offer</option>
+                    <option value="OTHER">Other</option>
                 </select>
             </div>
             <div class="form-element">
@@ -67,7 +69,7 @@
             </div>
             <div class="form-element buttons">
                 <input type="submit" name="submit-contact" value="Send" class="form-input form-button button-green"/>
-                <input type="button" name="save-contact" value="Save" class="form-input form-button button-blue" hidden="hidden"/>
+                <input type="button" name="save-contact" value="Save" class="form-input form-button button-blue"/>
                 <input type="reset" name="reset-contact" value="Reset" class="form-input form-button button-red"/>
             </div>
         </form>

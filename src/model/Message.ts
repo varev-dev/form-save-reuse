@@ -1,4 +1,4 @@
-export class Message {
+class Message {
     private _fullName: string;
     private _emailAddress: string;
     private _contactType: ContactType;
@@ -7,8 +7,7 @@ export class Message {
     private _content: string;
     private _status: MessageStatus;
 
-    constructor(fullName: string, emailAddress: string, contactType: ContactType, category: MessageCategory,
-                title: string, content: string, status: MessageStatus) {
+    constructor(fullName: string, emailAddress: string, contactType: ContactType, category: MessageCategory, title: string, content: string, status: MessageStatus) {
         this._fullName = fullName;
         this._emailAddress = emailAddress;
         this._contactType = contactType;
@@ -76,13 +75,13 @@ export class Message {
 }
 
 enum ContactType {
-    PRIVATE, BUSINESS
+    PRIVATE = "PRIVATE", BUSINESS = "BUSINESS"
 }
 
 enum MessageCategory {
-    PROJECT_ORDER, JOB_OFFER, OTHER
+    PROJECT_ORDER = "PROJECT_ORDER", JOB_OFFER = "JOB_OFFER", OTHER = "OTHER"
 }
 
 enum MessageStatus {
-    UNSENT, SENT
+    UNSENT = "UNSENT", SENT = "SENT"
 }
