@@ -24,8 +24,6 @@ const overrideMessage = () => {
     );
 
     index != -1 ? messages[index] = activeMessage : messages.push(activeMessage);
-
-    console.log("aktywne: " + JSON.stringify(activeMessage));
 }
 
 const bindValuesToMessage = (): Message => {
