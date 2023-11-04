@@ -7,6 +7,4 @@ saveMessageButton?.addEventListener("click", e => {
     activeMessage = bindValuesToMessage();
     overrideMessage();
     saveMessages();
-
-    console.log(localStorage.getItem('messages'));
 });
