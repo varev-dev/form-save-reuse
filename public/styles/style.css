@@ -13,7 +13,9 @@ nav {
     padding: 0 10vw;
     width: 100vw;
     height: 6em;
+    top: 0;
     position: fixed;
+    z-index: 2;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -107,11 +109,138 @@ nav:after {
 }
 
 header, section.contact {
+    box-sizing: border-box;
+    position: relative;
+    min-height: calc(100vh - 6em);
+    margin-top: 6em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 6rem;
+}
+
+.landing-title {
+    margin: -40px 0 40px;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.two-item-flex {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-history {
+    display: inline-flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.subtitle {
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2em;
+    color: #78a8b0;
+}
+
+.contact-history img {
+    width: 400px;
+    display: none;
+}
+
+.messages {
+    padding: 0 20px;
+    width: 400px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.message-list-expand {
+    top: 0;
+    bottom: 0;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.4em;
+    padding-left: 15px;
+    border: none;
+    text-align: left;
+    gap: 20px;
+    text-transform: uppercase;
+    background: #02161A;
+    color: #78a8b0;
+}
+
+.message-list {
+    display: none;
+}
+
+.message-list.active {
+    display: block;
+}
+
+.expand-icon, .expand-icon:after {
+    display: block;
+    content: '';
+    width: 20px;
+    height: 4px;
+    background: #0b697c;
+}
+
+.expand-icon:after {
+    transition: opacity 500ms;
+    rotate: 90deg;
+}
+
+.message-list.active .expand-icon:after {
+    opacity: 0;
+}
+
+.message-list {
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+.message-list div {
+    overflow-x: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #78a8b0;
+    background: #09323b;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+.message-title {
+    width: 100%;
+    height: 1.1em;
+    text-wrap: revert;
+    overflow-x: hidden;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.message-type-category {
+    word-spacing: 20px;
+    font-weight: lighter;
+}
+
+.message:not(:last-of-type) {
+    border-bottom: 2px solid #0b697c;
 }
 
 form {
