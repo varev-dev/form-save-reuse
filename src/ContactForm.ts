@@ -1,6 +1,3 @@
-let messages: Message[] = [];
-let activeMessage: Message;
-
 const initLocalStorageIfNull = () => {
     if (localStorage.getItem('messages') == null)
         localStorage.setItem('messages', '');
@@ -10,7 +7,25 @@ const loadMessagesFromLocalStorage = () => {
     let array = localStorage.getItem('messages') as string;
 
     try {
-        messages = <Message[]> JSON.parse(array);
+        let message  = new Message("", "", ContactType.PRIVATE, MessageCategory.OTHER,
+            "", "", MessageStatus.NOT_SENT);
+
+        JSON.parse(array, (key, value) => {
+            switch (key) {
+                case "_fullName": message.fullName = value; break;
+                case "_emailAddress": message.emailAddress = value; break;
+                case "_contactType": message = setEnumValueInMessage(message, value, "ContactType"); break;
+                case "_category": message = setEnumValueInMessage(message, value, "MessageCategory"); break;
+                case "_title": message.title = value; break;
+                case "_content": message.content = value; break;
+                case "_status": message = setEnumValueInMessage(message, value, "MessageStatus"); break;
+                default:
+                    messages.push(message);
+                    message  = new Message("", "", ContactType.PRIVATE, MessageCategory.OTHER,
+                        "", "", MessageStatus.NOT_SENT);
+                    break;
+            }
+        });
     } catch (e) {}
 }
 
@@ -28,7 +43,7 @@ const overrideMessage = () => {
 
 const bindValuesToMessage = (): Message => {
     let message = new Message("", "", ContactType.PRIVATE, MessageCategory.OTHER,
-        "", "", MessageStatus.UNSENT);
+        "", "", MessageStatus.NOT_SENT);
 
     message.fullName = inputValue("fullName");
     message.emailAddress = inputValue("email");
@@ -54,6 +69,9 @@ const setEnumValueInMessage = (message: Message, value: string, enumName: string
         case "MessageCategory":
             enumClass = MessageCategory;
             break;
+        case "MessageStatus":
+            enumClass = MessageStatus;
+            break;
         default:
             return message;
     }
@@ -62,6 +80,7 @@ const setEnumValueInMessage = (message: Message, value: string, enumName: string
         if (value === enumKey) {
             enumClass === MessageCategory ? message.category = enumClass[enumKey as keyof typeof enumClass] : "";
             enumClass === ContactType ? message.contactType = enumClass[enumKey as keyof typeof enumClass] : "";
+            enumClass === MessageStatus ? message.status = enumClass[enumKey as keyof typeof enumClass] : "";
             break;
         }
     }
