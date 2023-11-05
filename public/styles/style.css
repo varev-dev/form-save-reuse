@@ -186,7 +186,7 @@ header, section.contact {
     display: none;
 }
 
-.message-list.active {
+.messages.sent-active .message-list:first-of-type, .messages.not-sent-active .message-list:last-of-type {
     display: block;
 }
 
@@ -203,7 +203,7 @@ header, section.contact {
     rotate: 90deg;
 }
 
-.message-list.active .expand-icon:after {
+.messages.sent-active #toggle-sent .expand-icon:after, .messages.not-sent-active #toggle-not-sent .expand-icon:after {
     opacity: 0;
 }
 
