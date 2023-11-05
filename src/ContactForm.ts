@@ -5,6 +5,7 @@ const initLocalStorageIfNull = () => {
 
 const loadMessagesFromLocalStorage = () => {
     let array = localStorage.getItem('messages') as string;
+    messages = [];
 
     try {
         let message  = new Message("", "", ContactType.PRIVATE, MessageCategory.OTHER,
