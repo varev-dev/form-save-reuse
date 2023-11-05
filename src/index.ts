@@ -5,12 +5,9 @@ let activeMessage: Message;
 window.onload = () => {
     initLocalStorageIfNull()
     loadMessagesFromLocalStorage();
-    //generateMessages(MessageStatus.NOT_SENT);
+    generateMessages(MessageStatus.NOT_SENT);
+    generateMessages(MessageStatus.SENT);
 }
-
-// generateMessages(messages, MessageStatus.SENT);
-
-
 
 saveMessageButton?.addEventListener("click", e => {
     loadMessagesFromLocalStorage();
