@@ -7,6 +7,7 @@ window.onload = () => {
     loadMessagesFromLocalStorage();
     generateMessages(MessageStatus.NOT_SENT);
     generateMessages(MessageStatus.SENT);
+    showHistoryListIfNotEmpty();
 }
 
 saveMessageButton?.addEventListener("click", e => {
