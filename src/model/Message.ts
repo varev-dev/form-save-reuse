@@ -83,5 +83,5 @@ enum MessageCategory {
 }
 
 enum MessageStatus {
-    UNSENT = "UNSENT", SENT = "SENT"
+    NOT_SENT = "NOT_SENT", SENT = "SENT"
 }
