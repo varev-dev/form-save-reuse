@@ -4,6 +4,16 @@ const notSentButton = document.getElementById('toggle-not-sent') as HTMLButtonEl
 const sentList = document.querySelector('.message-sent') as HTMLDivElement;
 const notSentList = document.querySelector('.message-not-sent') as HTMLDivElement;
 
+const messageHistory = document.querySelector('.messages') as HTMLDivElement;
+const imageHistory = document.querySelector('.contact-history img') as HTMLDivElement;
+
+const showHistoryListIfNotEmpty = () => {
+    if (sentList.hasChildNodes() || notSentList.hasChildNodes()) {
+        messageHistory.style.display = "flex";
+        imageHistory.style.display = "none";
+    }
+}
+
 const generateMessages = (status: MessageStatus) => {
     messages
         .filter((message) => message.status == status && message.title != '')

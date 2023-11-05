@@ -151,14 +151,15 @@ header, section.contact {
 
 .contact-history img {
     width: 400px;
-    display: none;
 }
 
 .messages {
+    display: none;
     padding: 0 20px;
     width: 400px;
     max-height: 400px;
     overflow-y: scroll;
+    flex-direction: column-reverse;
 }
 
 .message-list-expand {
@@ -182,11 +183,19 @@ header, section.contact {
     color: #78a8b0;
 }
 
-.message-list {
+.message-list, .message-list-expand {
     display: none;
 }
 
-.messages.sent-active .message-list:first-of-type, .messages.not-sent-active .message-list:last-of-type {
+.messages.not-sent-active .message-not-sent:not(:empty), .messages.sent-active .message-sent:not(:empty) {
+    display: block;
+}
+
+.message-not-sent:not(:empty) + button, .message-sent:not(:empty) + button {
+    display: flex;
+}
+
+.messages.sent-active .message-sent, .messages.not-sent-active .message-not-sent {
     display: block;
 }
 
@@ -213,7 +222,7 @@ header, section.contact {
 }
 
 .message-list div {
-    overflow-x: hidden;
+    overflow: hidden;
     cursor: pointer;
     display: flex;
     flex-direction: column;

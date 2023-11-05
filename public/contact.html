@@ -33,22 +33,16 @@
                 <h3 class="subtitle">Messages History</h3>
                 <img src="images/svg/empty-inbox-monochromatic.svg" alt="Image of an empty inbox"/>
                 <div class="messages">
-                    <button class="message-list-expand" id="toggle-sent">
-                        <span class="expand-icon"></span>
-                        Sent
-                    </button>
-                    <div class="message-list message-sent">
-                        <div class="message">
-                            <h5 class="message-title">Lorem Ipsum sit dolor mea culpa si senor</h5>
-                            <p class="message-type-category">PRIVATE | JOB_OFFER</p>
-                        </div>
-                    </div>
+                    <div class="message-list message-not-sent"></div>
                     <button class="message-list-expand" id="toggle-not-sent">
                         <span class="expand-icon"></span>
                         Not Sent
                     </button>
-                    <div class="message-list message-not-sent">
-                    </div>
+                    <div class="message-list message-sent"></div>
+                    <button class="message-list-expand" id="toggle-sent">
+                        <span class="expand-icon"></span>
+                        Sent
+                    </button>
                 </div>
             </div>
             <form method="post" id="contact-form" action="odbierz.php">
