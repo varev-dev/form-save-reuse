@@ -5,8 +5,9 @@
     <title>Hobby</title>
     <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
     <link rel="stylesheet" type="text/css" href="styles/style.css"/>
-    <script src="../dist/model/Message.js"></script>
-    <script src="../dist/ContactForm.js"></script>
+    <script src="../dist/model/Message.js" defer></script>
+    <script src="../dist/ContactForm.js" defer></script>
+    <script src="../dist/MessageHistory.js" defer></script>
     <script src="../dist/index.js" defer></script>
 </head>
 <body>
@@ -32,7 +33,7 @@
                 <h3 class="subtitle">Messages History</h3>
                 <img src="images/svg/empty-inbox-monochromatic.svg" alt="Image of an empty inbox"/>
                 <div class="messages">
-                    <button class="message-list-expand" id="expand-sent">
+                    <button class="message-list-expand" id="toggle-sent">
                         <span class="expand-icon"></span>
                         Sent
                     </button>
@@ -41,40 +42,12 @@
                             <h5 class="message-title">Lorem Ipsum sit dolor mea culpa si senor</h5>
                             <p class="message-type-category">PRIVATE | JOB_OFFER</p>
                         </div>
-                        <div class="message">
-                            <h5 class="message-title">Lorem Ipsum sit dolor mea culpa si senor</h5>
-                            <p class="message-type-category">BUSINESS | PROJECT_ORDER</p>
-                        </div>
-                        <div class="message">
-                            <h5 class="message-title">Lorem Ipsum sit dolor mea culpa si senor</h5>
-                            <p class="message-type-category">PRIVATE | JOB_OFFER</p>
-                        </div>
-                        <div class="message">
-                            <h5 class="message-title">Lorem Ipsum sit dolor mea culpa si senor</h5>
-                            <p class="message-type-category">BUSINESS | PROJECT_ORDER</p>
-                        </div>
-                        <div class="message">
-                            <h5 class="message-title">Lorem Ipsum sit dolor mea culpa si senor</h5>
-                            <p class="message-type-category">PRIVATE | JOB_OFFER</p>
-                        </div>
-                        <div class="message">
-                            <h5 class="message-title">Lorem Ipsum sit dolor mea culpa si senor</h5>
-                            <p class="message-type-category">BUSINESS | PROJECT_ORDER</p>
-                        </div>
                     </div>
-                    <button class="message-list-expand" id="expand-not-sent">
+                    <button class="message-list-expand" id="toggle-not-sent">
                         <span class="expand-icon"></span>
                         Not Sent
                     </button>
                     <div class="message-list message-not-sent">
-                        <div class="message">
-                            <h5 class="message-title">Lorem Ipsum sit dolor mea culpa si senor</h5>
-                            <p class="message-type-category">PRIVATE | JOB_OFFER</p>
-                        </div>
-                        <div class="message">
-                            <h5 class="message-title">Lorem Ipsum sit dolor mea culpa si senor</h5>
-                            <p class="message-type-category">BUSINESS | PROJECT_ORDER</p>
-                        </div>
                     </div>
                 </div>
             </div>
