@@ -1,8 +1,9 @@
-const saveMessageButton = document.querySelector('input[type=button][name=save-contact]') as HTMLButtonElement | null;
+const saveMessageButton = document.querySelector('input[type=button][name=save-contact]') as HTMLButtonElement;
 let messages: Message[] = [];
 let activeMessage: Message;
 
 window.onload = () => {
+    saveMessageButton.style.display = "block";
     initLocalStorageIfNull()
     loadMessagesFromLocalStorage();
     generateMessages(MessageStatus.NOT_SENT);
