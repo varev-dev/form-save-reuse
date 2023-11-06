@@ -4,6 +4,7 @@ body {
     background-color: #0b232a;
     display: flex;
     flex-direction: column;
+    position: relative;
     min-height: 100vh;
 }
 
@@ -111,8 +112,8 @@ nav:after {
 header, section.contact {
     box-sizing: border-box;
     position: relative;
-    min-height: calc(100vh - 6em);
     margin-top: 6em;
+    margin-bottom: 3em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,7 +121,7 @@ header, section.contact {
 }
 
 .landing-title {
-    margin: -40px 0 40px;
+    margin: 20px 0 40px 0;
     color: white;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
@@ -305,7 +306,6 @@ textarea {
 
 .form-button {
     border: none;
-    outline: none;
     box-sizing: border-box;
     width: 100px;
     padding: 0 8px;
