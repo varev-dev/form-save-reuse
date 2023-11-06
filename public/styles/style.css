@@ -192,6 +192,10 @@ header, section.contact {
     display: block;
 }
 
+input[name="save-contact"] {
+    display: none;
+}
+
 .message-not-sent:not(:empty) + button, .message-sent:not(:empty) + button {
     display: flex;
 }
