@@ -53,7 +53,7 @@ const chooseMessageFromHistory = (messageId: number) => {
     setValueOfInput('fullName', message.fullName);
     setValueOfInput('email', message.emailAddress);
     setValueOfInput('messageTitle', message.title);
-    setValueOfInput('messageContent', message.content);
+    setValueOfTextArea('messageContent', message.content);
     radioButtonCheckValue('contactType', message.contactType);
     selectOption('category', message.category);
 }

@@ -96,15 +96,20 @@ const inputValue = (elementId: string): string => {
 }
 
 const setValueOfInput = (inputName: string, value: string) => {
-    let input = document.querySelector('input[name=' + inputName + ']') as HTMLInputElement;
-
+    let input=
+        document.querySelector('input[name=' + inputName + ']') as HTMLInputElement;
     input.value = value;
+}
+
+const setValueOfTextArea = (inputName: string, value: string) => {
+    let textarea =
+        document.querySelector('textarea[name=' + inputName + ']') as HTMLTextAreaElement;
+    textarea.value = value;
 }
 
 const radioButtonCheckValue = (inputName: string, value: string) => {
     let radioButton =
         document.querySelector('input[name=' + inputName + '][value=' + value + ']') as HTMLInputElement;
-
     radioButton.checked = true;
 }
 
