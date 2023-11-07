@@ -94,3 +94,22 @@ const inputValue = (elementId: string): string => {
 
     return element?.value;
 }
+
+const setValueOfInput = (inputName: string, value: string) => {
+    let input = document.querySelector('input[name=' + inputName + ']') as HTMLInputElement;
+
+    input.value = value;
+}
+
+const radioButtonCheckValue = (inputName: string, value: string) => {
+    let radioButton =
+        document.querySelector('input[name=' + inputName + '][value=' + value + ']') as HTMLInputElement;
+
+    radioButton.checked = true;
+}
+
+const selectOption = (selectName: string, value: string) => {
+    let selectOption =
+        document.querySelector('select[name= ' + selectName + '] > option[value=' + value + ']') as HTMLOptionElement;
+    selectOption.selected = true;
+}
