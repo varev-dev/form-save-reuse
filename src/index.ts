@@ -1,5 +1,6 @@
 const saveMessageButton = document.querySelector('input[type=button][name=save-contact]') as HTMLButtonElement;
 let messages: Message[] = [];
+let messageDivs: HTMLDivElement[] = [];
 let activeMessage: Message;
 
 window.onload = () => {
@@ -9,6 +10,16 @@ window.onload = () => {
     generateMessages(MessageStatus.NOT_SENT);
     generateMessages(MessageStatus.SENT);
     showHistoryListIfNotEmpty();
+
+    messageDivs.forEach(e => {
+        e.addEventListener('click', ev => {
+            if (e.getAttribute('message-id') == null)
+                return;
+
+            let value = parseInt(e.getAttribute('message-id') as string);
+            chooseMessageFromHistory(value);
+        });
+    });
 }
 
 saveMessageButton?.addEventListener("click", e => {
