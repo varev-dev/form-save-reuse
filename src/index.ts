@@ -5,11 +5,7 @@ let activeMessage: Message;
 
 window.onload = () => {
     saveMessageButton.style.display = "block";
-    initLocalStorageIfNull()
-    loadMessagesFromLocalStorage();
-    generateMessages(MessageStatus.NOT_SENT);
-    generateMessages(MessageStatus.SENT);
-    showHistoryListIfNotEmpty();
+    loadAndPrintMessages();
 
     messageDivs.forEach(e => {
         e.addEventListener('click', ev => {
@@ -18,6 +14,8 @@ window.onload = () => {
 
             let value = parseInt(e.getAttribute('message-id') as string);
             chooseMessageFromHistory(value);
+            saveMessages();
+            loadAndPrintMessages();
         });
     });
 }
@@ -27,6 +25,7 @@ saveMessageButton?.addEventListener("click", e => {
     activeMessage = bindValuesToMessage();
     overrideMessage();
     saveMessages();
+    loadAndPrintMessages();
 });
 
 toggleClass(sentButton, 'sent-active');

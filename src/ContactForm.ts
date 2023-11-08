@@ -1,35 +1,3 @@
-const initLocalStorageIfNull = () => {
-    if (localStorage.getItem('messages') == null)
-        localStorage.setItem('messages', '');
-}
-
-const loadMessagesFromLocalStorage = () => {
-    let array = localStorage.getItem('messages') as string;
-    messages = [];
-
-    try {
-        let message  = new Message("", "", ContactType.PRIVATE, MessageCategory.OTHER,
-            "", "", MessageStatus.NOT_SENT);
-
-        JSON.parse(array, (key, value) => {
-            switch (key) {
-                case "_fullName": message.fullName = value; break;
-                case "_emailAddress": message.emailAddress = value; break;
-                case "_contactType": message = setEnumValueInMessage(message, value, "ContactType"); break;
-                case "_category": message = setEnumValueInMessage(message, value, "MessageCategory"); break;
-                case "_title": message.title = value; break;
-                case "_content": message.content = value; break;
-                case "_status": message = setEnumValueInMessage(message, value, "MessageStatus"); break;
-                default:
-                    messages.push(message);
-                    message  = new Message("", "", ContactType.PRIVATE, MessageCategory.OTHER,
-                        "", "", MessageStatus.NOT_SENT);
-                    break;
-            }
-        });
-    } catch (e) {}
-}
-
 const saveMessages = () => {
     localStorage.setItem('messages', JSON.stringify(messages));
 }
