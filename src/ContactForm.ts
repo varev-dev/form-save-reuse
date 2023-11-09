@@ -86,3 +86,11 @@ const selectOption = (selectName: string, value: string): void => {
         document.querySelector('select[name= ' + selectName + '] > option[value=' + value + ']') as HTMLOptionElement;
     selectOption.selected = true;
 }
+
+const saveMessageWithStatus = (status: MessageStatus): void => {
+    loadMessagesFromLocalStorage();
+    activeMessage = bindValuesToMessage();
+    activeMessage.status = status;
+    overrideMessage();
+    saveMessages();
+}
