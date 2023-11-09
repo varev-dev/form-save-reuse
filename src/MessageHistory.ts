@@ -7,7 +7,7 @@ let notSentList = document.querySelector('.message-not-sent') as HTMLDivElement;
 const messageHistory = document.querySelector('.messages') as HTMLDivElement;
 const imageHistory = document.querySelector('.contact-history img') as HTMLDivElement;
 
-const showHistoryListIfNotEmpty = () => {
+const showHistoryListIfNotEmpty = (): void => {
     if (sentList.childNodes.length > 0 || notSentList.childNodes.length > 0) {
         messageHistory.style.display = "flex";
         imageHistory.style.display = "none";
@@ -18,7 +18,7 @@ const showHistoryListIfNotEmpty = () => {
     return;
 }
 
-const generateMessages = (status: MessageStatus) => {
+const generateMessages = (status: MessageStatus): void => {
     messages
         .filter((message) => message.status == status && message.title != '')
         .forEach((message) => {
@@ -26,7 +26,7 @@ const generateMessages = (status: MessageStatus) => {
         });
 }
 
-const createMessageDiv = (message: Message, parent: HTMLDivElement) => {
+const createMessageDiv = (message: Message, parent: HTMLDivElement): void => {
     let messageRoot = document.createElement('div');
     messageRoot.classList.add('message');
     messageRoot.setAttribute('message-id', messages.indexOf(message).toString());
@@ -47,13 +47,13 @@ const createMessageDiv = (message: Message, parent: HTMLDivElement) => {
     messageDivs.push(messageRoot);
 }
 
-const removeMessageDivs = (messageDivs: HTMLDivElement[]) => {
+const removeMessageDivs = (messageDivs: HTMLDivElement[]): void => {
     messageDivs.forEach(message => {
         message.remove();
     });
 }
 
-const chooseMessageFromHistory = (messageId: number) => {
+const chooseMessageFromHistory = (messageId: number): void => {
     if (messageId >= messages.length)
         return;
 
@@ -68,13 +68,13 @@ const chooseMessageFromHistory = (messageId: number) => {
     selectOption('category', message.category);
 }
 
-const toggleClass = (button: HTMLButtonElement, className: string) => {
+const toggleClass = (button: HTMLButtonElement, className: string): void => {
     button?.addEventListener('click', e => {
         button.parentElement?.classList.toggle(className);
     });
 }
 
-const loadMessagesFromLocalStorage = () => {
+const loadMessagesFromLocalStorage = (): void => {
     let array = localStorage.getItem('messages') as string;
     messages = [];
 
@@ -101,12 +101,12 @@ const loadMessagesFromLocalStorage = () => {
     } catch (e) {}
 }
 
-const initLocalStorageIfNull = () => {
+const initLocalStorageIfNull = (): void => {
     if (localStorage.getItem('messages') == null)
         localStorage.setItem('messages', '');
 }
 
-const loadAndPrintMessages = () => {
+const loadAndPrintMessages = (): void => {
     initLocalStorageIfNull();
     loadMessagesFromLocalStorage();
     removeMessageDivs(messageDivs);
@@ -114,5 +114,20 @@ const loadAndPrintMessages = () => {
     notSentList = document.querySelector('.message-not-sent') as HTMLDivElement;
     generateMessages(MessageStatus.NOT_SENT);
     generateMessages(MessageStatus.SENT);
+    messageClickListener(messageDivs);
     showHistoryListIfNotEmpty();
+}
+
+const messageClickListener = (messageDivs: HTMLDivElement[]): void => {
+    messageDivs.forEach(e => {
+        e.addEventListener('click', ev => {
+            if (e.getAttribute('message-id') == null)
+                return;
+
+            let value = parseInt(e.getAttribute('message-id') as string);
+            chooseMessageFromHistory(value);
+            saveMessages();
+            loadAndPrintMessages();
+        });
+    });
 }

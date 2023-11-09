@@ -6,18 +6,6 @@ let activeMessage: Message;
 window.onload = () => {
     saveMessageButton.style.display = "block";
     loadAndPrintMessages();
-
-    messageDivs.forEach(e => {
-        e.addEventListener('click', ev => {
-            if (e.getAttribute('message-id') == null)
-                return;
-
-            let value = parseInt(e.getAttribute('message-id') as string);
-            chooseMessageFromHistory(value);
-            saveMessages();
-            loadAndPrintMessages();
-        });
-    });
 }
 
 saveMessageButton?.addEventListener("click", e => {

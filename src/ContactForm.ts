@@ -1,8 +1,8 @@
-const saveMessages = () => {
+const saveMessages = (): void => {
     localStorage.setItem('messages', JSON.stringify(messages));
 }
 
-const overrideMessage = () => {
+const overrideMessage = (): void => {
     let index = messages.indexOf(
         messages.filter((message) => message?.title === activeMessage.title)[0]
     );
@@ -63,25 +63,25 @@ const inputValue = (elementId: string): string => {
     return element?.value;
 }
 
-const setValueOfInput = (inputName: string, value: string) => {
+const setValueOfInput = (inputName: string, value: string): void => {
     let input=
         document.querySelector('input[name=' + inputName + ']') as HTMLInputElement;
     input.value = value;
 }
 
-const setValueOfTextArea = (inputName: string, value: string) => {
+const setValueOfTextArea = (inputName: string, value: string): void => {
     let textarea =
         document.querySelector('textarea[name=' + inputName + ']') as HTMLTextAreaElement;
     textarea.value = value;
 }
 
-const radioButtonCheckValue = (inputName: string, value: string) => {
+const radioButtonCheckValue = (inputName: string, value: string): void => {
     let radioButton =
         document.querySelector('input[name=' + inputName + '][value=' + value + ']') as HTMLInputElement;
     radioButton.checked = true;
 }
 
-const selectOption = (selectName: string, value: string) => {
+const selectOption = (selectName: string, value: string): void => {
     let selectOption =
         document.querySelector('select[name= ' + selectName + '] > option[value=' + value + ']') as HTMLOptionElement;
     selectOption.selected = true;
