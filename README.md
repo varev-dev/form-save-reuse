@@ -1,4 +1,4 @@
-# About websita
+# About website
 
 Functionalities:
 - save not sent and sent messages
