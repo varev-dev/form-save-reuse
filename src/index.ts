@@ -7,6 +7,7 @@ let activeMessage: Message;
 
 window.onload = () => {
     saveMessageButton.style.display = "block";
+    document.getElementById("dialog")!.style.display = "block";
     loadAndPrintMessages();
 }
 

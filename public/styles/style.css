@@ -109,6 +109,10 @@ nav:after {
     color: white;
 }
 
+#dialog {
+    display: none;
+}
+
 header, section.contact {
     box-sizing: border-box;
     position: relative;

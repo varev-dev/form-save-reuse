@@ -6,6 +6,13 @@
     <title>Reusable Form Data</title>
     <link rel="stylesheet" type="text/css" media="screen" href="styles/reset.css">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+            integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../dist/model/Message.js" defer></script>
     <script src="../dist/ContactForm.js" defer></script>
     <script src="../dist/MessageHistory.js" defer></script>
@@ -28,6 +35,9 @@
         </ul>
     </nav>
     <section class="contact">
+        <div id="dialog" title="Basic dialog">
+            <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &apos;x&apos; icon.</p>
+        </div>
         <h2 class="landing-title">Contact Form</h2>
         <div class="two-item-flex">
             <div class="contact-history">
