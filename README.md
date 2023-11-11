@@ -2,7 +2,7 @@
 
 ### <i>Problem</i>:
 Many websites have a time-consuming form that <i>may take several sessions to complete</i>. 
-However, they do not offer <b>the option of saving content</b>, which then has to be hidden in txt files and pasted the next time. <br>
+However, they do not offer <b>the option of saving content</b>, which then has to be hidden in txt files and pasted the next time.
 
 ### <i>Solution</i>:
 Using the Web Storage API, create a <b>list of form approaches</b> that will be updated after clicking the Save button.
