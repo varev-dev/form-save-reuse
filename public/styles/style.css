@@ -214,7 +214,7 @@ input[name="save-contact"] {
 
 .expand-icon:after {
     transition: opacity 500ms;
-    rotate: 90deg;
+    transform: rotate(90deg);
 }
 
 .messages.sent-active #toggle-sent .expand-icon:after, .messages.not-sent-active #toggle-not-sent .expand-icon:after {
@@ -242,7 +242,6 @@ input[name="save-contact"] {
 .message-title {
     width: 100%;
     height: 1.1em;
-    text-wrap: revert;
     overflow-x: hidden;
     font-size: 1.1em;
     font-weight: bold;
