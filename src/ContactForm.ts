@@ -94,3 +94,37 @@ const saveMessageWithStatus = (status: MessageStatus): void => {
     overrideMessage();
     saveMessages();
 }
+
+const validateForm = (): string => {
+    if (activeMessage.fullName.trim() == "")
+        return "Full name is empty";
+
+    let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!activeMessage.emailAddress.match(emailRegex))
+        return "Email address is not valid";
+
+    if (activeMessage.title.trim() == "")
+        return "Message title is empty";
+
+    if (activeMessage.content.trim() == "")
+        return "Message content is empty";
+
+    return "";
+}
+
+$(function () {
+    $("#dialog").dialog({
+        autoOpen: false,
+        modal: true
+    });
+
+    $("#contact-form").on("submit", function (e) {
+        let validateFormMessage = validateForm();
+
+        if (validateFormMessage == "")
+            return;
+
+        $("#dialog").dialog("open").text(validateFormMessage);
+        e.preventDefault();
+    });
+});

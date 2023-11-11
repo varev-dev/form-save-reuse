@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hobby</title>
-    <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reusable Form Data</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+            integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../dist/model/Message.js" defer></script>
     <script src="../dist/ContactForm.js" defer></script>
     <script src="../dist/MessageHistory.js" defer></script>
@@ -27,11 +35,14 @@
         </ul>
     </nav>
     <section class="contact">
+        <div id="dialog" title="Basic dialog">
+            <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &apos;x&apos; icon.</p>
+        </div>
         <h2 class="landing-title">Contact Form</h2>
         <div class="two-item-flex">
             <div class="contact-history">
                 <h3 class="subtitle">Messages History</h3>
-                <img src="images/svg/empty-inbox-monochromatic.svg" alt="Image of an empty inbox"/>
+                <img src="images/svg/empty-inbox-monochromatic.svg" alt="Image of an empty inbox" loading="lazy">
                 <div class="messages">
                     <div class="message-list message-not-sent"></div>
                     <button class="message-list-expand" id="toggle-not-sent">
@@ -48,17 +59,17 @@
             <form method="post" id="contact-form" action="odbierz.php">
                 <div class="form-element">
                     <label for="fullName">Full Name</label>
-                    <input type="text" name="fullName" id="fullName" class="form-input"/>
+                    <input type="text" name="fullName" id="fullName" class="form-input">
                 </div>
                 <div class="form-element">
                     <label for="email">Email Address</label>
-                    <input type="email" name="email" id="email" class="form-input"/>
+                    <input type="email" name="email" id="email" class="form-input">
                 </div>
                 <div class="form-element no-flex">
                     <p>Contact type</p>
-                    <input type="radio" name="contactType" id="PRIVATE" value="PRIVATE" required/>
+                    <input type="radio" name="contactType" id="PRIVATE" value="PRIVATE" required>
                     <label for="PRIVATE">Private</label>
-                    <input type="radio" name="contactType" id="BUSINESS" value="BUSINESS" required/>
+                    <input type="radio" name="contactType" id="BUSINESS" value="BUSINESS" required>
                     <label for="BUSINESS">Business</label>
                 </div>
                 <div class="form-element">
@@ -72,24 +83,24 @@
                 </div>
                 <div class="form-element">
                     <label for="messageTitle">Message Title</label>
-                    <input type="text" name="messageTitle" id="messageTitle" class="form-input"/>
+                    <input type="text" name="messageTitle" id="messageTitle" class="form-input">
                 </div>
                 <div class="form-element">
                     <label for="messageContent">Message Content</label>
                     <textarea name="messageContent" id="messageContent" class="form-input"></textarea>
                 </div>
                 <div class="form-element no-flex">
-                    <input type="checkbox" name="agreeTOS" id="agreeTOS" class="form-input" required/>
+                    <input type="checkbox" name="agreeTOS" id="agreeTOS" class="form-input" required>
                     <label for="agreeTOS">Agree to data processing etc.</label>
                 </div>
                 <div class="form-element">
-                    <label>File with more information</label><br/>
-                    <input type="file" name="submit-contact" accept=".doc,.docx,application/msword" class=""/>
+                    <label for="file">File with more information</label><br>
+                    <input type="file" name="file" id="file" accept=".doc,.docx,application/msword">
                 </div>
                 <div class="form-element buttons">
-                    <input type="submit" name="submit-contact" value="Send" class="form-input form-button button-green"/>
-                    <input type="button" name="save-contact" value="Save" class="form-input form-button button-blue"/>
-                    <input type="reset" name="reset-contact" value="Reset" class="form-input form-button button-red"/>
+                    <input type="submit" name="submit-contact" value="Send" class="form-input form-button button-green">
+                    <input type="button" name="save-contact" value="Save" class="form-input form-button button-blue">
+                    <input type="reset" name="reset-contact" value="Reset" class="form-input form-button button-red">
                 </div>
             </form>
         </div>
