@@ -49,11 +49,12 @@ nav:after {
     position: relative;
 }
 
-.menu a {
-    font-family: 'Ubuntu', sans-serif;
+.menu li:hover {
+    background: #0b697c;
 }
 
 .menu > li > a {
+    font-family: 'Ubuntu', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,46 +64,6 @@ nav:after {
     height: 100%;
     font-weight: 500;
     letter-spacing: 1px;
-}
-
-.menu li:nth-child(3):hover .dropdown, .menu li:nth-child(3):focus-within .dropdown {
-    visibility: initial;
-}
-
-.dropdown {
-    background: #02161A;
-    z-index: 2;
-    width: 100%;
-    margin-top: calc(14rem - 2px);
-    position: absolute;
-    display: flex;
-    visibility: hidden;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 0 10px 10px;
-}
-
-.dropdown > li {
-    width: 100%;
-}
-.dropdown > li > a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.dropdown > li:last-child {
-    border-radius: 0 0 10px 10px;
-}
-
-.menu li:hover {
-    background: #0b697c;
-}
-
-.menu li a {
     text-transform: uppercase;
     text-decoration: none;
     font-size: 20px;
@@ -124,14 +85,78 @@ header, section.contact {
     align-items: center;
 }
 
-.landing-title {
+.landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 600px;
+}
+
+.references {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.contact .landing-title {
     margin: 20px 0 40px 0;
+}
+
+.landing-title {
     color: white;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     font-size: 2.5em;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+.landing-subtext {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: lighter;
+    font-size: 1.5em;
+    color: white;
+}
+
+.glass-button {
+    font-family: 'Ubuntu', sans-serif;
+    color: whitesmoke;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border-radius: 5px;
+    background-image: linear-gradient(30deg, #283c7e, #2e6b77, #388560, #5d8538);
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: gradient 5s ease infinite;
+    background-size: 300% 300%;
+    text-decoration: none;
+    text-align: center;
+    transition: filter 300ms;
+}
+
+.glass-button:hover, .glass-button:focus-within {
+    filter: brightness(150%);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+header .two-item-flex {
+    width: 100vw;
+    height: calc(100vh - 6em - 3rem);
+    align-items: center;
+    justify-content: center;
 }
 
 .two-item-flex {
@@ -155,7 +180,7 @@ header, section.contact {
     color: #78a8b0;
 }
 
-.contact-history img {
+img {
     width: 400px;
 }
 
@@ -350,9 +375,9 @@ footer {
     border-top: 3px solid #0b697c;
     background: #02161A;
     text-align: center;
-    line-height: 3rem;
+    line-height: 3em;
     width: 100%;
-    height: 3rem;
+    height: 3em;
 }
 
 footer p, footer p a {
