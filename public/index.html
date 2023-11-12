@@ -6,7 +6,17 @@
     <title>Reusable Form Data</title>
     <link rel="stylesheet" type="text/css" media="screen" href="styles/reset.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css"/>
-    <script src="../dist/index.js" defer></script>
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
+          integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+            integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../dist/SatisfactionSurvey.js" defer></script>
 </head>
 <body>
     <nav>
@@ -16,6 +26,16 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+    <div id="dialog" class="satisfaction-survey" title="Satisfaction Survey">
+        <div class="satisfaction-slider">
+            <h4>We would love to know your opinion!</h4>
+            <p>
+                <label for="amount">Rate this solution on a scale of 1-5:</label>
+                <input type="text" id="amount" readonly>
+            </p>
+            <div id="slider-range-max"></div>
+        </div>
+    </div>
     <header>
         <div class="two-item-flex">
             <div class="landing">

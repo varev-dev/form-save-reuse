@@ -89,7 +89,7 @@ header, section.contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     width: 600px;
 }
 
@@ -382,4 +382,39 @@ footer {
 
 footer p, footer p a {
     color: #0b697c;
+}
+
+.satisfaction-survey {
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.satisfaction-slider {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    width: 400px;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.satisfaction-slider p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.satisfaction-slider #amount {
+    max-width: 2ch;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5em;
+    border: 0;
+    background: transparent;
+    font-weight: bolder;
 }
