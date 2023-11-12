@@ -15,14 +15,16 @@ $( function() {
 } );
 
 $( function() {
-    dialog.dialog({
-        width: "auto",
-        autoOpen: true,
-        modal: true,
-        buttons: {
-            Rate: function() {
-                $( this ).dialog( "close" );
+    setTimeout(function () {
+        dialog.dialog({
+            width: "auto",
+            autoOpen: true,
+            modal: true,
+            buttons: {
+                Rate: function() {
+                    $( this ).dialog( "close" );
+                }
             }
-        }
-    });
+        });
+    }, 2000);
 });
